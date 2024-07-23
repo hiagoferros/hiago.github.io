@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup de Tecnologia</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background: #2978A5;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('https://www.gaytimes.com/wp-content/uploads/2020/09/Burger-King-McDonalds-590x370.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+        }
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+            will-change: transform;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            font-size: 2em;
+            border: none;
+            border-radius: 50%;
+            user-select: none;
+            transition: background 0.3s;
+            transform: translateY(-50%);
+        }
+        .prev:hover, .next:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 1.2em;
+        }
+        .portfolio-item {
+            display: inline-block;
+            width: 45%;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .portfolio-item img {
+            width: 100%;
+        }
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+        .team-member {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            text-align: center;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+        .team-member h3 {
+            margin: 10px 0;
+        }
+        .team-member p {
+            font-style: italic;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #2978A5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+        .contact-form button:hover {
+            background-color: #52B8F3;
+        }
+        .map {
+            height: 400px;
+            width: 100%;
+        }
+        footer {
+            background: #2978A5;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Elemento de áudio para música de fundo -->
+    <audio id="background-music" src="https://rr-02-bucket.cdn1313.net/download/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjE3Njk0MTMsInRpdGxlIjoiUmljayBBc3RsZXkgLSBOZXZlciBHb25uYSBHaXZlIFlvdSBVcCAoT2ZmaWNpYWwgTXVzaWMgVmlkZW8pIiwicGF0aCI6Ii93d3cvd3d3cm9vdC9ub2RldHViZS9zdG9yYWdlL3lvdXR1YmUvZFF3NHc5V2dYY1EvMzIwLm1wMyJ9.CUuIAyn23njJgJFC29txq09zHZJvwZ2Ak6pQLxWl-So" autoplay loop>
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <header>
+        <h1>Startup de Tecnologia</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#team">Equipe</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Bem-vindo à nossa Startup!</h2>
+        <p>Transformando ideias em soluções tecnológicas inovadoras.</p>
+    </section>
+
+    <section class="slider">
+        <div class="slides">
+            <div class="slide"><img src="https://neilpatel.com/wp-content/uploads/2019/08/profissional-de-telemarketing-sorridente.jpeg" alt="Slide 1"></div>
+            <div class="slide"><img src="https://blog.solides.com.br/wp-content/uploads/2023/06/Conheca-15-vantagens-de-usar-um-software-de-gestao-de-recursos-humanos-768x483.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="https://cdn.diariodolitoral.com.br/img/pc/920/610/dn_arquivo/2022/05/tigresa.jpg" alt="Slide 3"></div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </section>
+
+    <section class="section" id="services">
+        <h2>Nossos Serviços</h2>
+        <p>Desenvolvimento de Software, Consultoria em TI, e muito mais.</p>
+    </section>
+
+    <section class="section" id="portfolio">
+        <h2>Portfólio</h2>
+        <div class="portfolio-item">
+            <img src="https://i.pinimg.com/236x/4f/7a/1c/4f7a1c900a9db68e70544d0313baff2d.jpg" alt="Projeto 1">
+            <p>Descrição do Projeto 1</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://classic.exame.com/wp-content/uploads/2017/05/refrigerantes-dolly-da-fabricante-ragi-refrigerantes4.png" alt="Projeto 2">
+            <p>Descrição do Projeto 2</p>
+        </div>
+    </section>
+
+    <section class="section" id="team">
+        <h2>Nossa Equipe</h2>
+        <div class="team-member">
+            <img src="https://i.pinimg.com/564x/6d/9f/d9/6d9fd959e35cfe5afadcee2d11722448.jpg" alt="Lulinha">
+            <h3>Lulinha</h3>
+            <p>Amantes</p>
+        </div>
+        <div class="team-member">
+            <img src="https://i.pinimg.com/474x/50/ef/82/50ef8299bfee6a9b95e0990550226586.jpg" alt="Fazueli">
+            <h3>Fazueli</h3>
+            <p>Amantes</p>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contato</h2>
+        <form class="contact-form">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <section id="map">
+        <div class="map" id="map"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Startup de Tecnologia. Todos os direitos reservados.</p>
+        <p><a href="#home">Voltar ao topo</a></p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlides() {
+            const offset = -slideIndex * 100;
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % totalSlides;
+            showSlides();
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+            showSlides();
+        }
+
+        document.querySelector('.next').addEventListener('click', nextSlide);
+        document.querySelector('.prev').addEventListener('click', prevSlide);
+
+        // Initialize the slider
+        showSlides();
+
+        // Auto slide
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
